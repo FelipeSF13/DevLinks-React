@@ -1,42 +1,61 @@
-#root {
-  max-width: 1280px;
+.page {
+  min-height: 100vh;
+  background: url('./assets/bg-mobile.png') no-repeat top center / cover;
+}
+
+.content {
+  width: min(100% - 48px, 540px);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 56px 0 32px;
+}
+
+.profile { text-align: center; padding: 24px; }
+.avatar {
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 8px;
+  border: 1px solid var(--stroke-color);
+  border-radius: 50%;
+  background: var(--surface-color);
+}
+.profile p { line-height: 24px; font-weight: 600; }
+.theme-toggle {
+  width: 64px;
+  height: 24px;
+  margin: 4px auto 32px;
+  border: 1px solid var(--stroke-color);
+  border-radius: 999px;
+  background: var(--surface-color);
+  position: relative;
+}
+.theme-icon {
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+}
+.links { list-style: none; display: grid; gap: 16px; }
+.link {
+  display: block;
+  padding: 16px 24px;
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  background: var(--surface-color);
   text-align: center;
+  font-weight: 600;
 }
+.socials { display: flex; justify-content: center; gap: 16px; padding: 24px 0; }
+.social { display: grid; place-items: center; width: 40px; height: 40px; }
+.social-icon { width: 24px; height: 24px; background: currentColor; mask-size: contain; mask-repeat: no-repeat; mask-position: center; }
+footer { text-align: center; font-size: 14px; padding: 24px 0; }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@media (min-width: 700px) {
+  .page { background-image: url('./assets/bg-desktop.png'); }
 }
